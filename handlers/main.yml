@@ -1,0 +1,5 @@
+---
+- name: restart evilginx2
+  docker_container:
+    name: "{{ evilginx2_container_name }}"
+    restart: yes

@@ -1,0 +1,48 @@
+---
+- name: Ensures evilginx2 dir exists
+  file:
+    path: '{{ item }}'
+    state: directory
+  with_items:
+  - '{{ evilginx2_dir }}'
+  - '{{ evilginx2_dir }}/phishlets'
+  - '{{ evilginx2_dir }}/config'
+  - '{{ evilginx2_dir }}/templates'
+
+- name: Phishlets templet
+  template:
+    src: "{{ evilginx2_phishlet_location }}"
+    dest: "{{ evilginx2_dir }}/phishlets/{{ phishlet }}.yaml"
+    owner: root
+    mode: 777
+  notify:
+     - restart evilginx2
+  
+- name: Config templet
+  template:
+    src: "{{ evilginx2_config_location }}"
+    dest: "{{ evilginx2_dir }}/config/config.yaml"
+    owner: root
+    mode: 777
+  notify:
+     - restart evilginx2
+
+- name: Evilginx2
+  docker_container:
+    name: "{{ evilginx2_container_name }}"
+    hostname: "{{ evilginx2_hostname }}"
+    interactive: yes
+    image: "{{ evilginx2_docker_image }}"
+    pull: yes
+    state: started
+    entrypoint: "{{ evilginx2_entry_point }}"
+    published_ports: "{{ evilginx2_ports }}"
+    labels: '{{ evilginx2_docker_labels }}'
+    restart_policy: always
+    volumes:
+      - "{{ evilginx2_dir }}/config:/config"
+      - "{{ evilginx2_dir }}/phishlets:/phishlets"
+      - "{{ evilginx2_dir }}/templates:/templates"
+    networks:
+      - name: "{{ evilginx2_docker_network }}"
+    purge_networks: true

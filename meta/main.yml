@@ -1,0 +1,28 @@
+galaxy_info:
+  role_name: evilginx2_docker
+  author: warhorse
+  description: Installs Evilginx2 in Docker
+  company: Warhorse
+
+  issue_tracker_url: https://github.com/warhorse/ansible-role-evilginx2-docker/issues
+
+  license: BSD-3-Clause
+
+  min_ansible_version: 2.1
+
+  platforms:
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+
+  galaxy_tags:
+    - security
+    - phishing
+    - hacking
+
+dependencies:
+  - geerlingguy.docker
+  - geerlingguy.pip

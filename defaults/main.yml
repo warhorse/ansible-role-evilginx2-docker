@@ -1,0 +1,31 @@
+---
+evilginx2_hostname: "evilginx2"
+evilginx2_container_name: "evilginx2"
+
+evilginx2_phishlet_location: "o365.yaml.j2"
+evilginx2_config_location: "config.yaml.j2"
+
+evilginx_domain: 'example.com'
+redirect_domain: 'redirect.com'
+
+evilginx2_entry_point: "/bin/evilginx -p /phishlets -c /config -t /templates -debug -developer"
+
+evilginx2_docker_labels: {}
+evilginx2_docker_image: "ghcr.io/warhorse/docker-evilginx2:master"
+evilginx2_docker_network: "evilginx2"
+evilginx2_network_ipam_temp: "{{ evilginx2_network_ipam | default({}) }}"
+evilginx2_network_ipam_subnet: "{{
+  evilginx2_network_ipam_temp.subnet
+  | default('172.16.1.0/24')
+}}"
+evilginx2_network_ipam_gateway: "{{
+  evilginx2_network_ipam_temp.gateway
+  | default('172.16.1.1')
+}}"
+evilginx2_network_ipam_iprange: "{{
+  evilginx2_network_ipam_temp.iprange
+  | default('172.16.1.0/24')
+}}"
+
+evilginx2_dir: '/opt/docker/evilginx2'
+evilginx2_ports: ''
