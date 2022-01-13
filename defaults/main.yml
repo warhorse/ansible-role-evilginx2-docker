@@ -29,4 +29,6 @@ evilginx2_network_ipam_iprange: "{{
 }}"
 
 evilginx2_dir: '/opt/docker/evilginx2'
-evilginx2_ports: ''
+evilginx2_ports: 
+  - "80:80"
+  - "443:443"
