@@ -7,6 +7,7 @@ evilginx2_config_location: "config.yaml.j2"
 
 evilginx_domain: 'example.com'
 redirect_domain: 'redirect.com'
+phishlet: 'o365'
 
 evilginx2_entry_point: "/bin/evilginx -p /phishlets -c /config -t /templates -debug -developer"
 
