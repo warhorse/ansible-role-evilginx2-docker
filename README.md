@@ -2,6 +2,7 @@ Ansible Cobalt Strike (Docker)
 =========
 
 [![CI](https://github.com/warhorse/ansible-role-evilginx2-docker/workflows/CI/badge.svg?event=push)](https://github.com/warhorse/ansible-role-evilginx2-docker/actions?query=workflow%3ACI)
+[![Release](https://github.com/warhorse/ansible-role-evilginx2-docker/actions/workflows/release.yml/badge.svg)](https://github.com/warhorse/ansible-role-evilginx2-docker/actions/workflows/release.yml)
 [![warhorse.evilginx2_docker](https://img.shields.io/ansible/role/57563)](https://galaxy.ansible.com/warhorse/evilginx2_docker)
 [![warhorse.cobaltstrike_docker](https://img.shields.io/ansible/quality/57563)](https://galaxy.ansible.com/warhorse/evilginx2_docker)
 [![warhorse.cobaltstrike_docker](https://img.shields.io/ansible/role/d/57563)](https://galaxy.ansible.com/warhorse/evilginx2_docker)
