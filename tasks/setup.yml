@@ -1,8 +1,8 @@
-- name: 'setup : create cobaltstrike network'
+- name: 'setup : create evilginx2 network'
   become: true
   docker_network:
-    name: '{{ cs_docker_network }}'
+    name: '{{ evilginx2_docker_network }}'
     ipam_config:
-      - subnet: '{{ cs_network_ipam_subnet }}'
-        gateway: '{{ cs_network_ipam_gateway }}'
-        iprange: '{{ cs_network_ipam_iprange }}'
+      - subnet: '{{ evilginx2_network_ipam_subnet }}'
+        gateway: '{{ evilginx2_network_ipam_gateway }}'
+        iprange: '{{ evilginx2_network_ipam_iprange }}'
