@@ -2,7 +2,7 @@
 evilginx2_hostname: "evilginx2"
 evilginx2_container_name: "evilginx2"
 
-evilginx2_phishlet_location: "o365.yaml.j2"
+evilginx2_phishlet_folder: "templates/phishlets"
 evilginx2_config_location: "config.yaml.j2"
 
 evilginx_domain: 'example.com'

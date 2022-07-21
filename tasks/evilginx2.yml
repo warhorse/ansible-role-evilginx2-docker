@@ -9,12 +9,14 @@
   - '{{ evilginx2_dir }}/config'
   - '{{ evilginx2_dir }}/templates'
 
-- name: Phishlets templet
+- name: Create Phishlet templates
   template:
-    src: "{{ evilginx2_phishlet_location }}"
-    dest: "{{ evilginx2_dir }}/phishlets/{{ phishlet }}.yaml"
+    src: "{{ item }}"
+    dest: "{{ evilginx2_dir }}/phishlets/{{ item | basename | regex_replace('\\.j2$', '') }}"
     owner: root
     mode: 777
+  with_fileglob:
+    - "{{ evilginx2_phishlet_folder }}/*.j2"
   notify:
      - restart evilginx2
   
