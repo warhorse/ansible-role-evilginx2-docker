@@ -41,6 +41,7 @@
     published_ports: "{{ evilginx2_ports }}"
     labels: '{{ evilginx2_docker_labels }}'
     restart_policy: always
+    command_handling: compatibility
     volumes:
       - "{{ evilginx2_dir }}/config:/config"
       - "{{ evilginx2_dir }}/phishlets:/phishlets"
