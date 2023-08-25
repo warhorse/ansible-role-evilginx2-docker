@@ -3,7 +3,7 @@ evilginx2_hostname: "evilginx2"
 evilginx2_container_name: "evilginx2"
 
 evilginx2_phishlet_folder: "templates/phishlets"
-evilginx2_config_location: "config.yaml.j2"
+evilginx2_config_location: "config.json.j2"
 
 evilginx_domain: 'example.com'
 redirect_domain: 'redirect.com'
@@ -12,7 +12,7 @@ phishlet: 'o365'
 evilginx2_entry_point: "/bin/evilginx -p /phishlets -c /config -t /templates -debug -developer"
 
 evilginx2_docker_labels: {}
-evilginx2_docker_image: "ghcr.io/warhorse/docker-evilginx2:master"
+evilginx2_docker_image: "ghcr.io/almart/docker-evilginx2:master"
 evilginx2_docker_network: "evilginx2"
 evilginx2_network_ipam_temp: "{{ evilginx2_network_ipam | default({}) }}"
 evilginx2_network_ipam_subnet: "{{

